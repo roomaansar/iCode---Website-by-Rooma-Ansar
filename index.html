@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link href="./index.css" rel="stylesheet" />
+    <title>iCode</title>
+  </head>
+  <body>
+    <nav class="navbar new-height">
+      <div class="leftNav">
+        <p class="logo-name">iCode</p>
+        <ul id="list" class="nav-list invisible">
+          <li class="icon active align"><a href="#Home">Home</a></li>
+          <li class="icon"><a href="#about">About</a></li>
+          <li class="icon"><a href="#contact">Contact Us</a></li>
+        </ul>
+      </div>
+      <div class="rightNav invisible">
+        <input type="text" name="search" id="search" placeholder="Search! " />
+        <button class="btn btn-small" type="submit">Search</button>
+      </div>
+      <div class="burger">
+        <div class="line"></div>
+        <div class="line"></div>
+        <div class="line"></div>
+      </div>
+    </nav>
+    <div class="home" id="Home">
+      <div class="image">
+        <img src="./pon.png" alt="image" />
+      </div>
+      <div class="text">
+        <p class="text-big">Future is Here!</p>
+        <p class="text-small">
+          Build market-level skills with courses and certificates
+        </p>
+        <div class="sign">
+          <button class="btn btn-pri">LogIn</button>
+          <button class="btn btn-pri">SignUp</button>
+        </div>
+      </div>
+    </div>
+    <div class="about" id="about">
+      <p class="heading">About Us</p>
+      <p class="normal-text">
+        iCode is a freemium educational website for learning coding online. Our
+        platform is optimized for learning, testing, and training. Examples
+        might be simplified to improve reading and basic understanding.
+        Tutorials, references, and examples are constantly reviewed to avoid
+        errors, but we cannot warrant full correctness of all content. Our
+        mission is to make coding and software engineering accessible to
+        everyone through courses that are simple to digest, and practical to
+        implement.
+      </p>
+    </div>
+    <div class="contact" id="contact">
+      <p class="heading">Contact Us</p>
+      <div class="boxes">
+        <input
+          type="text"
+          name="search"
+          id="search2"
+          placeholder="Your Name!"
+        />
+        <input
+          type="text"
+          name="search"
+          id="search2"
+          placeholder="Your Email!"
+        />
+        <input
+          type="text"
+          name="search"
+          id="search2"
+          placeholder="Your Concern!"
+        />
+        <button class="btn btn-p">Submit</button>
+      </div>
+    </div>
+    <footer>
+      <div class="footer-container">
+        <p>Copyrighht &copy;</p>
+        <p>All rights reserved to iCode</p>
+      </div>
+    </footer>
+  </body>
+  <script>
+    // active navbar
+    var header = document.getElementById("list");
+    icons = header.getElementsByClassName("icon");
+    for (var i = 0; i < icons.length; i++) {
+      icons[i].addEventListener("click", function () {
+        var current = document.getElementsByClassName("active");
+        current[0].className = current[0].className.replace(" active", "");
+        this.className += " active";
+      });
+    }
+    // responsive navbar
+    rinav = document.querySelector(".rightNav");
+    lenav = document.querySelector(".nav-list");
+    bur = document.querySelector(".burger");
+    nav = document.querySelector(".new-height");
+    bur.addEventListener("click", function () {
+      rinav.classList.toggle("invisible");
+      lenav.classList.toggle("invisible");
+      nav.classList.toggle("new-height");
+    });
+  </script>
+</html>
